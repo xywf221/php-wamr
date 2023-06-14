@@ -1,0 +1,7 @@
+ARG_ENABLE('wasm', 'wasm support', 'no');
+
+if (PHP_WASM != 'no') {
+	AC_DEFINE('HAVE_WASM', 1, 'wasm support enabled');
+
+	EXTENSION('wasm', 'wasm.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
